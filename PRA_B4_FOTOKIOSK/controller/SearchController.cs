@@ -23,7 +23,7 @@ namespace PRA_B4_FOTOKIOSK.controller
 
         // Wordt uitgevoerd wanneer er op de Zoeken knop is geklikt
 
-        // ik hou van mannen
+        // SearchButton
         public void SearchButtonClick()
         {
 

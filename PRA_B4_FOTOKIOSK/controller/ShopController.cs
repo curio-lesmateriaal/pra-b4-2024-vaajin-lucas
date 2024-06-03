@@ -23,8 +23,18 @@ namespace PRA_B4_FOTOKIOSK.controller
             ShopManager.SetShopReceipt("Eindbedrag\n€");
 
             // Vul de productlijst met producten
-            ShopManager.Products.Add(new KioskProduct() { Name = "Foto 10x15" });
-            
+            ShopManager.Products.Add(new KioskProduct() { Name = "Foto 10x15", Price = 2.55m });
+
+            // Loop door de producten en voeg ze toe aan de prijslijst
+            foreach (KioskProduct product in ShopManager.Products)
+            {
+                // Bouw de string op voor het huidige product met naam en prijs
+                string productInfo = $"{product.Name}: €{product.Price}";
+
+                // Voeg het huidige product toe aan de prijslijst
+                ShopManager.AddShopPriceList(productInfo);
+            }
+
             // Update dropdown met producten
             ShopManager.UpdateDropDownProducts();
         }
@@ -32,7 +42,7 @@ namespace PRA_B4_FOTOKIOSK.controller
         // Wordt uitgevoerd wanneer er op de Toevoegen knop is geklikt
         public void AddButtonClick()
         {
-            
+
         }
 
         // Wordt uitgevoerd wanneer er op de Resetten knop is geklikt
